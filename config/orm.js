@@ -1,13 +1,15 @@
 const connection = require('./connection');
 
-module.exports = function(app) {
-    function selectAll() {
+const orm = {
+    selectAll: function() {
 
-    }
-    function insertOne() {
+    },
+    insertOne: function() {
+        
+    },
+    updateOne: function() {
         
     }
-    function updateOne() {
-        
-    }
-}
+};
+
+module.exports = orm;
