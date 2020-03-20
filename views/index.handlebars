@@ -1,18 +1,66 @@
-<h1>Burgern Menu</h1>
-<img src="../public/assets/img/burger.png">
-<ul>
-  {{#each burgers}}
-  <li>
-    <p>
-      {{this.id}}. {{this.burger}}
-      <button data-burgerid="{{this.id}}" class="devour-burger">Devour it!</button>
-    </p>
-  </li>
-  {{/each}}
-</ul>
-
-<h2>Create a Burger</h2>
-<form id="create-burger" class="button-size">
-  <textarea type="text" name="burger"></textarea>
-  <button type="submit">Order Burger!</button>
-</form>
+<div class="container py-3">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1>Burger Menu</h1>
+        <img src="/assets/img/burger.png" alt="burger">
+        <h2>Create a Burger</h2>
+        <div class="input-group mb-3" id="create-burger">
+          <input type="text" class="form-control" placeholder="New burger" name="burger" aria-describedby="burger">
+          <div class="input-group-append">
+            <button class="btn btn-outline-danger" type="button" id="burger">Order Burger</button>
+          </div>
+        </div>
+        {{!-- <form id="create-burger" class="button-size">
+          <div class="form-group">
+            <textarea type="text" class="form-control" name="burger"></textarea>
+            <button class="btn btn-danger" type="submit">Order Burger!</button>
+          </div>
+        </form> --}}
+      </div>
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-lg-12">
+            <p>
+              <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Burgers not Devoured!
+              </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+              <ul>
+                {{#each burgers}}
+                  {{#unless devoured}}
+                  <p>
+                    {{this.id}}. {{this.burger_name}}
+                    <button data-burgerid="{{this.id}}" class="btn btn-danger devour-burger">Devour it!</button>
+                  </p>
+                  {{/unless}}
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-lg-12">
+            <p>
+              <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                Burgers that are Devoured!
+              </button>
+            </p>
+            <div class="collapse" id="collapseExample2">
+              <ul>
+                {{#each burgers}}
+                  {{#if devoured}}
+                  <p>
+                    {{this.id}}. {{this.burger_name}}
+                    <button data-burgerid="{{this.id}}" class="btn btn-danger devour-burger">Devour it!</button>
+                  </p>
+                  {{/if}}
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
