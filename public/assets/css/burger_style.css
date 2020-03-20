@@ -1,23 +1,39 @@
 body {
     width: 100%;
-    background-color: #ffcc66;
+    /* background-color: #ffcc66; */
 }
 
-h1 {
-    color: #ff3300;
+h1, h2 {
+    color: #e83c28
 }
 
 .devour, .devoured {
     width: auto;
     border-radius: 15px;
-    background-color: #f88264c0;
+    background-color: #fef1ee;
     padding: 20px;
+}
+
+.devour h3, .devoured h3 {
+    color: #e83c28
 }
 
 .devour h3:hover, .devoured h3:hover {
     cursor: pointer;
 }
 
+.devour p, .devoured  {
+    font-weight: 600;
+}
+
 .btn, .form-control {
     border-radius: 50px;
+}
+
+.btn-sm {
+    float: right;
+}
+
+#add {
+    float: right;
 }
