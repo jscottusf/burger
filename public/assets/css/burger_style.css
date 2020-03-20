@@ -6,3 +6,18 @@ body {
 h1 {
     color: #ff3300;
 }
+
+.devour, .devoured {
+    width: auto;
+    border-radius: 15px;
+    background-color: #f88264c0;
+    padding: 20px;
+}
+
+.devour h3:hover, .devoured h3:hover {
+    cursor: pointer;
+}
+
+.btn, .form-control {
+    border-radius: 50px;
+}

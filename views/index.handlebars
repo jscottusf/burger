@@ -1,4 +1,4 @@
-<div class="container py-3">
+<div class="container my-3 py-3">
     <div class="row">
       <div class="col-lg-6">
         <h1>Burger Menu</h1>
@@ -20,44 +20,44 @@
       <div class="col-lg-6">
         <div class="row">
           <div class="col-lg-12">
-            <p>
-              <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                Burgers not Devoured!
-              </button>
-            </p>
-            <div class="collapse" id="collapseExample">
-              <ul>
-                {{#each burgers}}
-                  {{#unless devoured}}
-                  <p>
-                    {{this.id}}. {{this.burger_name}}
-                    <button data-burgerid="{{this.id}}" class="btn btn-danger devour-burger">Devour it!</button>
-                  </p>
-                  {{/unless}}
-                {{/each}}
-              </ul>
+            <div class="devour">
+              <h3 data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                BURGERS TO DEVOUR +
+              </h3>
+              <div class="collapse" id="collapseExample">
+                <ul>
+                  {{#each burgers}}
+                    {{#unless devoured}}
+                    <p>
+                      {{this.id}}. {{this.burger_name}}
+                      <button data-burgerid="{{this.id}}" class="btn btn-danger devour-burger">Devour it!</button>
+                    </p>
+                    {{/unless}}
+                  {{/each}}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
         <br>
         <div class="row">
           <div class="col-lg-12">
-            <p>
-              <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
-                Burgers that are Devoured!
-              </button>
-            </p>
-            <div class="collapse" id="collapseExample2">
-              <ul>
-                {{#each burgers}}
-                  {{#if devoured}}
-                  <p>
-                    {{this.id}}. {{this.burger_name}}
-                    <button data-burgerid="{{this.id}}" class="btn btn-danger devour-burger">Devour it!</button>
-                  </p>
-                  {{/if}}
-                {{/each}}
-              </ul>
+            <div class="devoured">
+              <h3 data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
+                BURGER DEVOUR HISTORY +
+              </h3>
+              <div class="collapse" id="collapseExample2">
+                <ul>
+                  {{#each burgers}}
+                    {{#if devoured}}
+                    <p>
+                      {{this.id}}. {{this.burger_name}}
+                      <button data-burgerid="{{this.id}}" class="btn btn-danger devour-burger">Devour it!</button>
+                    </p>
+                    {{/if}}
+                  {{/each}}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
