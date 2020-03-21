@@ -3,8 +3,8 @@ const orm = require('../config/orm');
 // Export at the end of the burger.js file.
 
 const burger = {
-    all: function(cb) {
-        orm.selectAll("burgers", function(res) {
+    all: function(table, cb) {
+        orm.selectAll(table, function(res) {
             cb(res);
         })
     },

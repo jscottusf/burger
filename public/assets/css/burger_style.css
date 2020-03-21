@@ -27,7 +27,15 @@ h1, h2 {
     cursor: pointer;
 }
 
-.devour p, .devoured  {
+.menu-item {
+    text-transform: uppercase;
+}
+
+.menu-items-div p {
+    color: rgb(63, 61, 61);
+}
+
+.devour p, .devoured, .menu-item  {
     font-weight: 600;
 }
 

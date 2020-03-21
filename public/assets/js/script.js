@@ -5,7 +5,33 @@ $(function() {
             burger_name: $('#new-burger').val().trim(),
             devoured: 0
         };
-        //console.log(newBuger);
+        if (newBurger.burger_name !== "") {
+           //console.log(newBuger);
+            $.ajax('api/burgers', {
+                type: 'POST',
+                data: newBurger
+            }).then(
+                function() {
+                    location.reload();
+                }
+            )
+            $('#new-burger').val(''); 
+        }
+        
+    })
+
+    $("#create-burger").keyup(function(event) {
+        if (event.keyCode === 13) {
+            $("#order-burger").click();
+        }
+    });
+
+    $('.menu-order').on('click', function(event) {
+        event.preventDefault();
+        var name = $(this).attr('id');
+        var newBurger = {
+            burger_name: name
+        }
         $.ajax('api/burgers', {
             type: 'POST',
             data: newBurger
@@ -14,7 +40,6 @@ $(function() {
                 location.reload();
             }
         )
-        $('#new-burger').val('');
     })
 
     $('.devour-burger').on('click', function(event) {

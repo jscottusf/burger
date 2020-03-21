@@ -1,21 +1,11 @@
 const express = require('express');
 const burger = require('../models/burger');
-const menu = require('../models/menu');
 const router = express.Router();
 
-router.get('/', function(req, res) {
-    burger.all(function(data) {
-        var hbsObject =   {
-            burgers: data
-        };
-        //console.log(hbsObject);
-        res.render("index", hbsObject);
-    });
-    
-});
+router.get('/', getMenu, getBurgers, renderBurgers);
 
 router.get('/api/burgers', function(req, res) {
-    burger.all(function(data, err) {
+    burger.all("burgers", function(data, err) {
         if (err) throw err;
         res.json(data);
     })
@@ -39,6 +29,27 @@ router.put("/api/burgers/:id", function(req, res) {
         }
     });
 });
+
+function getMenu(req, res, next) {
+    burger.all("burger_menu", function(data) {
+        req.menu = data;
+        next();
+    })
+}
+
+function getBurgers(req, res, next) {
+    burger.all("burgers", function(data) {
+        req.burger = data;
+        next();
+    })
+}
+
+function renderBurgers(req, res) {
+    res.render("index", {
+        menu: req.menu,
+        burgers: req.burger
+    })
+}
 
 
 
