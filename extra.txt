@@ -14,3 +14,11 @@ menu.all(function(data) {
         console.log(hbsObject2);
         res.render("index", hbsObject2);
     })
+
+// = mysql.createConnection({
+//     host: "localhost",
+//     port: 3306,
+//     user: "root",
+//     password: "rootpass",
+//     database: "burgers_db"
+// });
