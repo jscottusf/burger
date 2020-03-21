@@ -17,7 +17,6 @@ $(function() {
             )
             $('#new-burger').val(''); 
         }
-        
     })
 
     $("#create-burger").keyup(function(event) {
