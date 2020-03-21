@@ -1,7 +1,9 @@
 <div class="container my-3 py-3">
     <div class="row">
       <div class="col-lg-7">
-        <h2 id="header"><img src="/assets/img/burger.png" width="30" alt="burger"> Build a Burger <img src="/assets/img/burger.png" width="30" alt="burger"></h2>
+        <h2 id="header"> BURGER MENU </h2>
+        
+        
         <div class="input-group mb-3" id="create-burger">
           <input type="text" class="form-control" placeholder="New burger" id="new-burger" aria-describedby="order-burger">
           <div class="input-group-append">
@@ -13,10 +15,10 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="devour">
-              <h3 data-toggle="collapse" data-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+              <h5 data-toggle="collapse" data-target="#collapseExample" aria-expanded="true">
                 BURGERS TO DEVOUR <span id="add">+</span>
-              </h3>
-              <div class="collapse" id="collapseExample">
+              </h5>
+              <div class="collapse show" id="collapseExample">
                 <div>
                   {{#each burgers}}
                     {{#unless devoured}}
@@ -35,9 +37,9 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="devoured">
-              <h3 data-toggle="collapse" data-target="#collapseExample2" aria-controls="collapseExample">
+              <h5 data-toggle="collapse" data-target="#collapseExample2" aria-controls="collapseExample">
                 DEVOUR HISTORY <span id="add">+</span>
-              </h3>
+              </h5>
               <div class="collapse" id="collapseExample2">
                 <div>
                   {{#each burgers}}

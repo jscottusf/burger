@@ -9,7 +9,6 @@ app.set("view engine", "handlebars");
 app.use(express.static("public"));
 const routes = require('./controllers/burgers_controller');
 app.use(routes);
-
 app.listen(PORT, function() {
     console.log("Server listening on: http://localhost:" + PORT);
 });

@@ -1,5 +1,6 @@
 const express = require('express');
 const burger = require('../models/burger');
+const menu = require('../models/menu');
 const router = express.Router();
 
 router.get('/', function(req, res) {
@@ -7,9 +8,10 @@ router.get('/', function(req, res) {
         var hbsObject =   {
             burgers: data
         };
-        console.log(hbsObject);
+        //console.log(hbsObject);
         res.render("index", hbsObject);
     });
+    
 });
 
 router.get('/api/burgers', function(req, res) {
