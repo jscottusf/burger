@@ -4,7 +4,7 @@ $(function() {
         var newBurger = {
             burger_name: $('#new-burger').val().trim(),
             devoured: 0
-        };
+        }
         if (newBurger.burger_name !== "") {
            //console.log(newBuger);
             $.ajax('api/burgers', {
